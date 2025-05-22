@@ -4,6 +4,7 @@ export interface IUser {
   name: string;
   email: string;
   phone: string;
+  image : string;
   city?: string;
   isBlock? : boolean | undefined;
   address?: string;

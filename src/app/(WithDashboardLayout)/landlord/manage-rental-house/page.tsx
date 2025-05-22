@@ -2,7 +2,7 @@ import CreateProductForm from "@/components/modules/landlord/Create-Product/Crea
 
 const page = () => {
     return (
-        <div  className="min-h-[60vh] flex justify-center items-center">
+        <div className="min-h-[60vh] flex justify-center items-center">
             <CreateProductForm/>
         </div>
     );

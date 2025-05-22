@@ -13,7 +13,11 @@ import { Input } from "@/components/ui/input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useUser } from "@/context/UserContext";
-import {  updateProfile } from "@/services/AuthServices";
+import { updateProfile } from "@/services/AuthServices";
+import ProfileImageUploader from "@/components/ui/core/ProfileImageUploader/ProfileImageUploader";
+import ChangePassword from "../../auth/passwordChange/ChangePassword";
+import { useState } from "react";
+import { uploadFile } from "@/lib/uploadImage";
 const UpdateProfile = ({
   data: userData,
 }: {
@@ -21,11 +25,13 @@ const UpdateProfile = ({
     name: string;
     phone: string;
     city: string;
+    image: string;
     address: string;
     email: string;
   };
 }) => {
-  const { setIsLoading} = useUser();
+  const { setIsLoading } = useUser();
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const form = useForm({
     defaultValues: {
       name: userData?.name || "",
@@ -38,9 +44,16 @@ const UpdateProfile = ({
     formState: { isSubmitting },
   } = form;
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    
+    let imageUrl;
+    if (selectedImage) {
+      imageUrl = await uploadFile(selectedImage);
+    }
+    const formData = {
+      ...data,
+      image: imageUrl,
+    };
     try {
-      const res = await updateProfile(data);
+      const res = await updateProfile(formData);
       setIsLoading(true);
       if (res.success) {
         toast.success(res?.message);
@@ -53,7 +66,7 @@ const UpdateProfile = ({
     }
   };
   return (
-    <div className=" w-full md:w-[80%] lg:w-[70%] xl:w-[50%] border-2 rounded-xl p-5">
+    <div className=" w-full ">
       <div className="flex items-center mb-3 gap-2">
         <div>
           <h1 className="text-lg font-semibold">Update Your Profile</h1>
@@ -81,6 +94,7 @@ const UpdateProfile = ({
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="phone"
@@ -141,13 +155,23 @@ const UpdateProfile = ({
               )}
             />
           </div>
-
-          <Button type="submit">
+          <div className="flex items-center ">
             {" "}
-            {isSubmitting ? "Updating..." : "Update"}
-          </Button>
+            <ProfileImageUploader
+              initialImage={userData.image}
+              onImageChange={(file) => setSelectedImage(file)}
+            />
+          </div>
+
+          <div className="flex justify-end">
+            <Button type="submit">
+              {" "}
+              {isSubmitting ? "Updating..." : "Update"}
+            </Button>
+          </div>
         </form>
       </Form>
+      <ChangePassword />
     </div>
   );
 };

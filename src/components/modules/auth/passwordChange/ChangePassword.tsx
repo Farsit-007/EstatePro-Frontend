@@ -32,28 +32,26 @@ const ChangePassword = () => {
   const confirmPassword = form.watch("confirmPassword");
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-        const res = await changePassword(data);
-        setIsLoading(true)
-        if (res.success) {
-          toast.success(res?.message);
-          if (redirect) {
-            router.push(redirect);
-          } else {
-            router.push("/profile");
-          }
+      const res = await changePassword(data);
+      setIsLoading(true);
+      if (res.success) {
+        toast.success(res?.message);
+        if (redirect) {
+          router.push(redirect);
         } else {
-          toast.error(res?.message);
+          router.push("/profile");
         }
+      } else {
+        toast.error(res?.message);
+      }
     } catch (error: any) {
       console.log(error);
     }
   };
 
   return (
-    <div className="max-w-md w-full border-2 rounded-xl p-5">
+    <div className=" w-full ">
       <div className="flex items-center mb-3 gap-2">
-        <div>{/* <Logo /> */}</div>
-
         <div>
           <h1 className="text-lg  font-semibold">Change Your Password</h1>
         </div>
@@ -105,7 +103,7 @@ const ChangePassword = () => {
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
                   <Input
-                     type="password"
+                    type="password"
                     placeholder="********"
                     {...field}
                     value={field.value || ""}
@@ -120,13 +118,15 @@ const ChangePassword = () => {
             )}
           />
 
-          <Button
-            disabled={newPassword !== confirmPassword}
-            className="w-full my-3"
-            type="submit"
-          >
-            {isSubmitting ? "Savings..." : "Save"}
-          </Button>
+          <div className="flex justify-end">
+            <Button
+              disabled={newPassword !== confirmPassword }
+              className=""
+              type="submit"
+            >
+              {isSubmitting ? "Savings..." : "Save"}
+            </Button>
+          </div>
         </form>
       </Form>
     </div>

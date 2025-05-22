@@ -30,19 +30,9 @@ const navDataByRole = {
       icon: SquareTerminal,
     },
     {
-      title: "Settings",
-      url: "#",
+      title: "Profile",
+      url: "/profile",
       icon: Settings,
-      items: [
-        {
-          title: "Edit Profile",
-          url: "/edit-profile",
-        },
-        {
-          title: "Change Password",
-          url: "/change-password",
-        },
-      ],
     },
   ],
   landlord: [
@@ -71,21 +61,11 @@ const navDataByRole = {
       url: "/landlord/manage-rental-request",
       icon: SquareTerminal,
     },
-   
+
     {
-      title: "Settings",
-      url: "#",
+      title: "Profile",
+      url: "/profile",
       icon: Settings,
-      items: [
-        {
-          title: "Edit Profile",
-          url: "/edit-profile",
-        },
-        {
-          title: "Change Password",
-          url: "/change-password",
-        },
-      ],
     },
   ],
   admin: [
@@ -110,19 +90,9 @@ const navDataByRole = {
       icon: SquareTerminal,
     },
     {
-      title: "Settings",
-      url: "#",
+      title: "Profile",
+      url: "/profile",
       icon: Settings,
-      items: [
-        {
-          title: "Edit Profile",
-          url: "/edit-profile",
-        },
-        {
-          title: "Change Password",
-          url: "/change-password",
-        },
-      ],
     },
   ],
 };
@@ -139,21 +109,21 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-            <Link
-          href="/"
-          className="flex items-center gap-2 group"
-          prefetch={false}
-        >
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-            <div className="relative px-4 py-1 bg-white dark:bg-gray-900 ring-1 ring-gray-900/5 rounded-full leading-none flex items-center">
-              <Building className="h-5 w-5 text-purple-600" />
-              <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                EstatePro
-              </span>
-            </div>
-          </div>
-        </Link>
+              <Link
+                href="/"
+                className="flex items-center gap-2 group"
+                prefetch={false}
+              >
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+                  <div className="relative px-4 py-1 bg-white dark:bg-gray-900 ring-1 ring-gray-900/5 rounded-full leading-none flex items-center">
+                    <Building className="h-5 w-5 text-purple-600" />
+                    <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                      EstatePro
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

@@ -69,7 +69,7 @@ const CreateProductForm = () => {
     }
   };
   return (
-    <div className="border-2 border-gray-300 rounded-xl flex-grow max-w-2xl p-5 my-5">
+    <div className="border-2 border-gray-300 rounded-xl flex-grow max-w-4xl p-5 my-5">
       <div className="flex items-center space-x-4 mb-5">
         {/* <Logo /> */}
         <div>
