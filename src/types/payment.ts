@@ -1,0 +1,23 @@
+export type TPayment = {
+  email: string;
+  name: string;
+  product: string;
+  productImage: string;
+  productName: string;
+  status: "Pending" | "Paid" | "Failed" | "Cancelled";
+  id: string;
+  transactionStatus: string;
+  bank_status: "Pending" |"Success" | "Paid" | "Failed" | "Cancelled";
+  sp_code: string;
+  sp_message: string;
+  phone_no: string;
+  address: string;
+  city: string;
+  order_id: string;
+  method: string;
+  bank_trx_id: string;
+  amount: number;
+  payable_amount: number;
+  date_time: string;
+  invoice_no: string;
+};
