@@ -11,7 +11,6 @@ const SearchField = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [houses, setHouses] = useState([]);
  
-
   useEffect(() => {
     const searchProperty = async () => {
       const { data: houses } = await getSearchedAllListingHouse({ searchTerm: searchQuery });
@@ -21,7 +20,7 @@ const SearchField = () => {
   }, [searchQuery]);
 
   return (
-    <div className="relative px-4 md:px-0 max-w-2xl mx-auto">
+    <div className="relative px-4 md:px-0 max-w-2xl mx-auto z-50">
       <form role="search" className="w-full">
         <Input
           type="search"

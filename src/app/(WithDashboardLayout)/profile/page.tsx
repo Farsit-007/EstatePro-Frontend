@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Mail, ShieldCheck, Ban } from "lucide-react";
 import ProfileCard from "@/components/modules/profile/update-profile/ProfileCard";
-const UserProfileCard = async () => {
+const page = async () => {
   const { data } = await getMe();
   return (
     <div className="grid lg:grid-cols-6 gap-10 p-6">
@@ -59,4 +59,4 @@ const UserProfileCard = async () => {
     </div>
   );
 };
-export default UserProfileCard;
+export default page;

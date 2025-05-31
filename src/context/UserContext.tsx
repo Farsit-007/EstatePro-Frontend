@@ -1,4 +1,5 @@
 "use client";
+import LoadingPage from "@/components/modules/Loading/LoadingPage";
 import { getCurrentUser } from "@/services/AuthServices";
 import { IUser } from "@/types/user";
 import {
@@ -32,7 +33,7 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
   }, [isLoading]);
   
   if (isLoading) {
-    return <div>Loading ......</div>;
+    return <div><LoadingPage/></div>;
   }
   return (
     <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
