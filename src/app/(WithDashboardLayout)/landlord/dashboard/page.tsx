@@ -1,4 +1,8 @@
-const page = () => {
+import { meta } from "@/services/admin";
+import Link from "next/link";
+
+const page = async() => {
+    const {data} = await meta()
     return (
         <div className="p-6 bg-gray-50 min-h-screen">
             {/* Header */}
@@ -13,7 +17,7 @@ const page = () => {
                     <div className="flex items-center justify-between">
                         <div>
                             <p className="text-gray-500 text-sm">Total Properties</p>
-                            <p className="text-3xl font-bold mt-2">8</p>
+                            <p className="text-3xl font-bold mt-2">{data?.totalProperty || 0}</p>
                         </div>
                         <div className="bg-blue-100 p-3 rounded-lg">
                             <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,7 +31,7 @@ const page = () => {
                     <div className="flex items-center justify-between">
                         <div>
                             <p className="text-gray-500 text-sm">Active Tenants</p>
-                            <p className="text-3xl font-bold mt-2">24</p>
+                            <p className="text-3xl font-bold mt-2">{data?.totalTenant || 0 } </p>
                         </div>
                         <div className="bg-green-100 p-3 rounded-lg">
                             <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,14 +45,14 @@ const page = () => {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <button className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <Link href={'/landlord/manage-rental-house'} className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center space-x-3">
                         <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
                         <span className="font-medium">Add New Property</span>
                     </div>
-                </button>
+                </Link>
             </div>
 
          

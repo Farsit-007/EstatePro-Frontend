@@ -10,7 +10,7 @@ const FeaturedCard = async () => {
   return (
     <div className="my-20">
       <div className="px-3">
-        <h1 className="font-medium text-3xl pb-8">Features Listings</h1>
+        <h1 className="font-bold text-3xl pb-8">Features Listings</h1>
       </div>
       <div className="flex-1 grid px-5 lg:grid-cols-4 gap-5 lg:gap-10 md:grid-cols-2 justify-center items-center">
         <Suspense

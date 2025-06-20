@@ -14,7 +14,7 @@ const page = async() => {
                             <div className="flex items-center justify-between">
                                 <div>
                                     <h2 className="text-xl font-semibold mb-2">Approved Applications</h2>
-                                    <p className="text-4xl font-bold text-blue-600">{data[0]?.count || 0}</p>
+                                    <p className="text-4xl font-bold text-black">{data[0]?.count || 0}</p>
                                     <p className="text-gray-500 mt-2">Active rentals</p>
                                 </div>
                                 <div className="bg-blue-100 p-4 rounded-lg">
@@ -29,7 +29,7 @@ const page = async() => {
                             <div className="flex items-center justify-between">
                                 <div>
                                     <h2 className="text-xl font-semibold mb-2">Pending Applications</h2>
-                                    <p className="text-4xl font-bold text-orange-600">{data[1]?.count || 0}</p>
+                                    <p className="text-4xl font-bold text-black">{data[1]?.count || 0}</p>
                                     <p className="text-gray-500 mt-2">Under review</p>
                                 </div>
                                 <div className="bg-orange-100 p-4 rounded-lg">

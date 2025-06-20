@@ -13,21 +13,21 @@ const InteractiveCarousel = () => {
       title: "Find Your Dream Rental!",
       description: "Discover luxury cabins with breathtaking views",
       image:
-        "https://images.pexels.com/photos/19501326/pexels-photo-19501326/free-photo-of-woman-hands-cutting-simit-for-breakfast.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+        "/1.jpg",
       color: "bg-emerald-100",
     },
     {
       title: "Your Next Home Awaits!",
       description: "Modern apartments in city centers",
       image:
-        "https://images.pexels.com/photos/13003306/pexels-photo-13003306.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+       "/2.jpg",
       color: "bg-sky-100",
     },
     {
       title: "Rent the Perfect Place!",
       description: "Wake up to ocean waves every morning",
       image:
-        "https://images.pexels.com/photos/28982084/pexels-photo-28982084/free-photo-of-cozy-book-on-wrinkled-bedspread.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+        "/3.jpg",
       color: "bg-amber-100",
     },
   ];
@@ -70,8 +70,8 @@ const InteractiveCarousel = () => {
             <Image
               src={slide.image}
               alt={slide.title}
-              width={500}
-              height={500}
+              width={2400}
+              height={2400}
               className="w-full h-full object-cover transform rounded-3xl transition-transform duration-1000"
             />
 

@@ -11,7 +11,7 @@ const page = async () => {
       <div className="lg:col-span-2">
         <Card className="w-full relative rounded-3xl border-none shadow-2xl  transition-all duration-300 hover:scale-[1.01]">
           <CardHeader className="flex flex-col items-center text-center space-y-2">
-            <Avatar className="w-24 h-24 shadow-md ring-2 ring-indigo-500">
+            <Avatar className="w-24 h-24 shadow-md ring-2 ring-gray-500">
               {data?.image && (
                 <AvatarImage
                   src={data?.image}
@@ -19,7 +19,7 @@ const page = async () => {
                   className="object-cover"
                 />
               )}
-              <AvatarFallback className="text-2xl font-bold bg-indigo-500 text-white">
+              <AvatarFallback className="text-2xl font-bold bg-black text-white">
                 {data?.name[0].toUpperCase()}
               </AvatarFallback>
             </Avatar>
@@ -28,11 +28,11 @@ const page = async () => {
               {data?.name}
             </h2>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-indigo-500" />
+              <Mail className="w-4 h-4 text-gray-500" />
               <span>{data?.email}</span>
             </div>
             <div className="flex gap-2">
-              <Badge className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
+              <Badge className="flex items-center gap-1 px-3 py-1 bg-black text-white">
                 <ShieldCheck
                   className={`w-4 h-4 ${
                     data?.isBlock ? "text-red-500" : "text-green-500"
@@ -40,7 +40,7 @@ const page = async () => {
                 />
                 {data?.role.toUpperCase()}
               </Badge>
-              {data.isBlock && (
+              {data?.isBlock && (
                 <Badge
                   variant="destructive"
                   className="flex items-center gap-1 px-2"

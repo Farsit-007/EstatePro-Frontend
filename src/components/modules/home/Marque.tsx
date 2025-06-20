@@ -28,7 +28,12 @@ const ReviewMarquee = () => {
 
   return (
     <div className="py-8 my-20 relative overflow-hidden">
-      {/* Gradient overlays */}
+      {/* Gradient overlays */}<div className="my-5">
+       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-800">
+         Clients Feedbacks
+        </h2>
+
+      </div>
       <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white via-white/50 to-transparent z-10 pointer-events-none"></div>
       <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white via-white/50 to-transparent z-10 pointer-events-none"></div>
 
@@ -65,7 +70,7 @@ const ReviewMarquee = () => {
               
               {/* Author */}
               <div className="text-right">
-                <h4 className="font-semibold text-indigo-600">{review.name}</h4>
+                <h4 className="font-semibold text-black">{review.name}</h4>
                 <p className="text-sm text-slate-400">Verified Guest</p>
               </div>
             </div>

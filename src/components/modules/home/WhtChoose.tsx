@@ -20,7 +20,7 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 my-10">
+    <section className="py-16 bg-gray-50 rounded-2xl my-10">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-800">
           Why Choose Us?
@@ -34,7 +34,7 @@ export const WhyChooseUs = () => {
             >
               {/* Icon container with geometric shape */}
               <div className="absolute -top-8 left-1/2 -translate-x-1/2">
-                <div className="p-4 bg-indigo-600 text-white rounded-lg shadow-md rotate-45 transform group-hover:rotate-12 transition-transform duration-300">
+                <div className="p-4 bg-gray-800 text-white rounded-lg shadow-md rotate-45 transform group-hover:rotate-12 transition-transform duration-300">
                   <div className="-rotate-45">
                     {feature.icon}
                   </div>
@@ -54,8 +54,8 @@ export const WhyChooseUs = () => {
         {/* Geometric connection lines */}
         <div className="hidden md:block max-w-4xl mx-auto mt-12">
           <div className="relative h-1">
-            <div className="absolute left-1/3 right-1/3 h-full bg-gradient-to-r from-transparent via-indigo-200 to-transparent" />
-            <div className="absolute left-1/2 top-0 w-px h-16 bg-indigo-200 transform -translate-y-full" />
+            <div className="absolute left-1/3 right-1/3 h-full bg-gradient-to-r from-transparent via-gray-900 to-transparent" />
+            <div className="absolute left-1/2 top-0 w-px h-16 bg-gray-800 transform -translate-y-full" />
           </div>
         </div>
       </div>

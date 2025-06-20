@@ -24,15 +24,15 @@ export const FAQ = () => {
   ];
 
   return (
-    <section className="py-16 my-10 bg-gradient-to-b from-indigo-50 to-blue-50 relative overflow-hidden">
+    <section className="py-16 my-10 bg-gray-50 rounded-2xl relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-48 h-48 bg-purple-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-blue-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-48 h-48 bg-gray-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-gray-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <div className="text-center mb-12">
-          <Sparkles className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+          <Sparkles className="w-12 h-12 text-gray-900 mx-auto mb-4" />
+          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-black">
             Your Questions Answered
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
@@ -45,12 +45,12 @@ export const FAQ = () => {
             <div 
               key={item.q}
               className={`group cursor-pointer transition-all duration-300 ${
-                activeIndex === index ? 'ring-2 ring-indigo-500' : 'hover:ring-1 hover:ring-indigo-200'
+                activeIndex === index ? 'ring-2 ring-gray-500' : 'hover:ring-1 hover:ring-gray-200'
               } bg-white rounded-2xl p-6 shadow-sm hover:shadow-md`}
               onClick={() => setActiveIndex(activeIndex === index ? null : index)}
             >
               <div className="flex items-start gap-4">
-                <div className="p-2 bg-indigo-100 rounded-lg text-indigo-600">
+                <div className="p-2 bg-gray-100 rounded-lg text-gray-600">
                   <HelpCircle className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
@@ -58,14 +58,14 @@ export const FAQ = () => {
                     <h3 className="text-lg font-semibold text-gray-900">
                       {item.q}
                     </h3>
-                    <ArrowDown className={`w-5 h-5 text-indigo-600 transition-transform ${
+                    <ArrowDown className={`w-5 h-5 text-gray-600 transition-transform ${
                       activeIndex === index ? 'rotate-180' : ''
                     }`} />
                   </div>
                   <div className={`overflow-hidden transition-all duration-300 ${
                     activeIndex === index ? 'max-h-40 mt-4' : 'max-h-0'
                   }`}>
-                    <p className="text-gray-600 pl-2 border-l-4 border-indigo-100">
+                    <p className="text-gray-600 pl-2 border-l-4 border-gray-100">
                       {item.a}
                     </p>
                   </div>

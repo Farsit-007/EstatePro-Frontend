@@ -12,6 +12,7 @@ const CommonLayout = async({ children }: { children: React.ReactNode }) => {
       
       <main className="min-h-[calc(100vh-200px)] container mx-auto"> {children}</main>
       <FooterSection />
+      
     </div>
   );
 };

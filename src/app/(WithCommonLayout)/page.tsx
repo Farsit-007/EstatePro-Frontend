@@ -8,12 +8,14 @@ import { WhyChooseUs } from "@/components/modules/home/WhtChoose";
 export default function Home() {
   return (
     <div>
-     <InteractiveCarousel/>{/* Banner */}
-     <SearchField />{/* Search */}
-     <FeaturedCard/>{/* Featured Product */}
-     <ReviewMarquee/>{/* Testimonial */}
-     <WhyChooseUs/>
-     <FAQ/>
+      {/* <MaintenanceModal/> */}
+      <InteractiveCarousel />
+      <SearchField />
+      <FeaturedCard />
+      <WhyChooseUs />
+      <ReviewMarquee />
+
+      <FAQ />
     </div>
   );
 }

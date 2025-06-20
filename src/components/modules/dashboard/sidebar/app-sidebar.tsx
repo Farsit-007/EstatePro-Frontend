@@ -108,23 +108,22 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <Link
+            <SidebarMenuButton size="lg" asChild></SidebarMenuButton>
+              <div className="flex items-center justify-center">
+                <Link
                 href="/"
-                className="flex items-center gap-2 group"
+                className="flex items-centercursor-pointer gap-2 group"
                 prefetch={false}
               >
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                  <div className="relative px-4 py-1 bg-white dark:bg-gray-900 ring-1 ring-gray-900/5 rounded-full leading-none flex items-center">
-                    <Building className="h-5 w-5 text-purple-600" />
-                    <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                      EstatePro
-                    </span>
+                  <div className="relative px-4 py-1 bg-black text-white rounded-full leading-none flex items-center">
+                    <Building className="h-5 w-5" />
+                    <span className="ml-2 font-bold">EstatePro</span>
                   </div>
                 </div>
               </Link>
-            </SidebarMenuButton>
+              </div>
+            
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>

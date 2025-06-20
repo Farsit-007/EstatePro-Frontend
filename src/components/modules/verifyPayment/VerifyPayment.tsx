@@ -63,9 +63,9 @@ const VerifyPayment = () => {
 
   if (isLoading) {
     return (
-      <div className="flex h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="flex h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-50">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-12 w-12 animate-spin text-blue-600" />
+          <Loader2 className="h-12 w-12 animate-spin text-gray-600" />
           <p className="text-lg font-medium text-gray-600">Verifying Payment...</p>
         </div>
       </div>
@@ -102,15 +102,15 @@ const VerifyPayment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4 ">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-50 p-4 ">
       <Card className="mx-auto max-w-4xl overflow-hidden shadow-xl transition-all hover:shadow-2xl">
-        <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6">
+        <CardHeader className="bg-gradient-to-r from-gray-600 to-gray-700 p-6">
           <div className="flex flex-col justify-between space-y-4 md:flex-row md:items-center md:space-y-0">
             <div className="flex items-center space-x-4">
               <Car className="h-10 w-10 text-white" />
               <div>
-                <h1 className="text-3xl font-bold text-white">SpeedGear Hub</h1>
-                <p className="text-blue-100">Trusted Vehicle Solutions</p>
+                <h1 className="text-3xl font-bold text-white">EstatePro</h1>
+                <p className="text-gray-100">Trusted Rental Solutions</p>
               </div>
             </div>
             <div className="space-y-1 text-right text-white">
@@ -128,7 +128,7 @@ const VerifyPayment = () => {
             {/* Customer Details Card */}
             <Card className="bg-gray-50">
               <CardHeader className="flex items-center space-x-2 pb-2">
-                <User className="h-6 w-6 text-blue-600" />
+                <User className="h-6 w-6 text-gray-600" />
                 <h2 className="text-xl font-semibold">Customer Information</h2>
               </CardHeader>
               <Separator className="mb-2" />
@@ -145,7 +145,7 @@ const VerifyPayment = () => {
 
             <Card className="bg-gray-50">
               <CardHeader className="flex items-center space-x-2 pb-2">
-                <CreditCard className="h-6 w-6 text-blue-600" />
+                <CreditCard className="h-6 w-6 text-gray-600" />
                 <h2 className="text-xl font-semibold">Payment Details</h2>
               </CardHeader>
               <Separator className="mb-2" />
@@ -156,11 +156,11 @@ const VerifyPayment = () => {
                 <div className="space-y-2 rounded-lg bg-white p-3">
                   <div className="flex justify-between font-medium">
                     <span>Amount Paid:</span>
-                    <span className="text-blue-600">{orderData?.amount} BDT</span>
+                    <span className="text-gray-600">{orderData?.amount} BDT</span>
                   </div>
                   <div className="flex justify-between font-medium">
                     <span>Payable Amount:</span>
-                    <span className="text-blue-600">{orderData?.payable_amount} BDT</span>
+                    <span className="text-gray-600">{orderData?.payable_amount} BDT</span>
                   </div>
                 </div>
               </CardContent>
@@ -168,7 +168,7 @@ const VerifyPayment = () => {
           </div>
 
           {orderData?.bank_status && (
-            <Card className="mt-4 border-2 border-dashed border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <Card className="mt-4 border-2 border-dashed border-gray-200 bg-gradient-to-r from-gray-50 to-indigo-50">
               <CardContent className="flex flex-col items-center p-6 text-center">
                 <div className="mb-4">{getStatusBadge(orderData.bank_status)}</div>
                 <p className="max-w-md text-sm text-gray-600">
@@ -186,11 +186,11 @@ const VerifyPayment = () => {
         <CardFooter className="bg-gray-50 p-8">
           <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-center text-sm text-gray-600">
-              Need assistance? Contact our support team at support@speedgearhub.com
+              Need assistance? Contact our support team at support@estatepro.com
             </p>
             <Button 
               onClick={handlePush}
-              className="gap-2 rounded-full bg-blue-600 px-8 py-6 text-lg hover:bg-blue-700"
+              className="gap-2 rounded-full bg-gray-600 px-8 py-6 text-lg hover:bg-gray-700"
             >
               <CreditCard className="h-5 w-5" />
               View Rental Request

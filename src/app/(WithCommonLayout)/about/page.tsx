@@ -13,9 +13,9 @@ export default function page() {
             src="/cover.webp"
             alt="About Us"
             fill
-            className="object-cover rounded-t-4xl"
+            className="object-cover rounded-t-2xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-r rounded-t-4xl  from-blue-900/80 to-blue-600/80" />
+          <div className="absolute inset-0 bg-gradient-to-r rounded-t-2xl  from-gray-900/80 to-gray-600/80" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Finding Your Perfect Space</h1>
@@ -26,11 +26,11 @@ export default function page() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">Our Story</h2>
-            <div className="w-20 h-1 bg-blue-500 mx-auto" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
+            <div className="w-20 h-1 bg-gray-500 mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -41,7 +41,7 @@ export default function page() {
                 cutting-edge technology with human expertise to simplify your home search.
               </p>
               <div className="flex items-center space-x-4">
-                <BadgeCheck className="h-12 w-12 text-blue-600" />
+                <BadgeCheck className="h-12 w-12 text-gray-600" />
                 <div>
                   <h3 className="text-xl font-semibold">Trusted by 500,000+ Users</h3>
                   <p className="text-gray-600">4.9/5 average rating across platforms</p>
@@ -64,16 +64,16 @@ export default function page() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">Our Core Values</h2>
-            <div className="w-20 h-1 bg-blue-500 mx-auto" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <div className="w-20 h-1 bg-gray-500 mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <div key={index} className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <value.icon className="h-8 w-8 text-blue-600" />
+                  <div className="p-3 bg-gray-100 rounded-lg">
+                    <value.icon className="h-8 w-8 text-gray-600" />
                   </div>
                   <h3 className="text-xl font-semibold ml-4">{value.title}</h3>
                 </div>
@@ -85,13 +85,13 @@ export default function page() {
       </section>
 
 
-      <section className="bg-blue-900 text-white py-10">
+      <section className="bg-gray-900 rounded-b-2xl text-white py-10">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-3">Ready to Find Your Dream Home?</h2>
           <p className="text-xl mb-4">Start your journey with us today</p>
           <Link
             href="/houses"
-            className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
+            className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors inline-block"
           >
             Browse Listings
           </Link>

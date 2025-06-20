@@ -1,6 +1,6 @@
 "use client";
 import { ChevronsUpDown, LogOut } from "lucide-react";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,8 +27,8 @@ export function NavUser({ user }: { user: IUser }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     setUser(null);
     setIsLoading(true);
     if (protectedRoutes.some((route) => pathname.match(route))) {
@@ -47,13 +47,9 @@ export function NavUser({ user }: { user: IUser }) {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8">
-                {user?.image ? (
-                  <AvatarImage src={user?.image} />
-                ) : (
-                  <AvatarFallback className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                    {user?.name?.charAt(0).toUpperCase()}
-                  </AvatarFallback>
-                )}
+                <AvatarFallback className="bg-gradient-to-r from-gray-500 to-gray-900 text-white cursor-pointer">
+                  {user?.name?.charAt(0).toUpperCase()}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user?.name}</span>
@@ -71,13 +67,9 @@ export function NavUser({ user }: { user: IUser }) {
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8">
-                  {user?.image ? (
-                    <AvatarImage src={user?.image} />
-                  ) : (
-                    <AvatarFallback className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                      {user?.name?.charAt(0).toUpperCase()}
-                    </AvatarFallback>
-                  )}
+                  <AvatarFallback className="bg-gradient-to-r from-gray-500 to-gray-900 text-white cursor-pointer">
+                    {user?.name?.charAt(0).toUpperCase()}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user?.name}</span>

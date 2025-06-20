@@ -18,6 +18,7 @@ export const getAllListingHouse = async (
    if(query?.location){
     params.append('district',query?.location as string)
   }
+  console.log(`${process.env.NEXT_PUBLIC_BASE_API}/rental-house?limit=${limit}&page=${page}&${params}`);
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/rental-house?limit=${limit}&page=${page}&${params}`,
@@ -46,9 +47,7 @@ export const getSearchedAllListingHouse = async (query: {
   if (query?.searchTerm) {
     params.append("searchTerm", query?.searchTerm.toString());
   }
-  console.log(
-    `${process.env.NEXT_PUBLIC_BASE_API}/rental-house/search?${params}`
-  );
+ 
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/rental-house/search?${params}`,

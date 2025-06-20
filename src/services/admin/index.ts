@@ -46,6 +46,25 @@ export const singleUser = async (email : string) => {
 };
 
 
+export const meta = async () => {
+  const token = await getValidToken();
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/meta/`, {
+      method: "GET",
+      headers: {
+        Authorization: token,
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json()
+    return data
+  } catch (error : any) {
+   return Error(error)
+  }
+};
+
+
+
 export const updateUserStatus = async (id : string,value : {isBlock?: boolean}) => {
    
   const token = await getValidToken();

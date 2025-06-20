@@ -37,7 +37,7 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
 
   return (
      <div className="container mx-auto flex items-center justify-center my-20 py-8">
-      <div className="grid grid-cols-1 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 rounded-3xl p-8 lg:grid-cols-2 gap-12 mb-12 shadow-2xl shadow-orange-100/50 hover:shadow-2xl hover:shadow-orange-200/50 transition-all duration-300 border-4 border-white">
+      <div className="grid grid-cols-1 bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 rounded-3xl p-8 lg:grid-cols-2 gap-12 mb-12 shadow-2xl shadow-gray-100/50 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 border-4 border-white">
         <div className="space-y-6 relative">
           <div 
             className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group border-4 border-white"
@@ -46,8 +46,8 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
             {/* Floating Badges */}
             <div className="absolute top-4 left-4 z-10 flex gap-2">
               <div className="flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium shadow-md transition-transform duration-200 hover:scale-105">
-                <Star className="h-4 w-4 text-amber-500 fill-amber-400" />
-                <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                <Star className="h-4 w-4 text-amber-300 fill-amber-300" />
+                <span className="bg-gradient-to-r from-amber-400 to-amber-400 bg-clip-text text-transparent">
                   4.98 Rating
                 </span>
               </div>
@@ -73,7 +73,7 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
               />
             </div>
 
-            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-1 rounded-full text-sm font-medium text-white shadow-md">
+            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-gray-500 to-gray-500 px-4 py-1 rounded-full text-sm font-medium text-white shadow-md">
               {mainImage + 1}/{house?.imageUrl?.length}
             </div>
 
@@ -137,8 +137,8 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
                 }}
                 className={`relative w-24 h-24 rounded-2xl overflow-hidden border-4 transition-all duration-300 ${
                   mainImage === index
-                    ? "border-orange-500 scale-105 shadow-lg"
-                    : "border-white hover:scale-105"
+                    ? " scale-105"
+                    : " hover:scale-105"
                 }`}
               >
                 <Image
@@ -150,7 +150,7 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
                 />
                 {mainImage === index && (
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
                       <Star className="h-4 w-4 text-white fill-white" />
                     </div>
                   </div>
@@ -167,7 +167,7 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
             <div className="mt-6 transition-transform duration-300 hover:scale-[1.02]">
               <Button
                 onClick={handleNoUser}
-                className="w-full py-7 text-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+                className="w-full py-7 text-xl bg-black text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all"
               >
                 Request Rental
               </Button>
@@ -178,12 +178,12 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
 
         <div className="space-y-8 relative">
         
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-black bg-clip-text text-transparent">
             {house?.name}
           </h1>
           
-          <div className="flex items-center gap-3 text-xl text-gray-600">
-            <MapPin className="h-6 w-6 text-orange-500" />
+          <div className="flex items-center gap-3 text-xl text-gray-900">
+            <MapPin className="h-6 w-6 text-gray-900" />
             <span className="font-medium bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
               {house?.location}
             </span>
@@ -192,13 +192,13 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-5">
             <div className="p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <div className="text-3xl font-bold bg-black bg-clip-text text-transparent">
                 ৳{house?.amount}
               </div>
               <span className="text-gray-600 font-medium">Monthly Rent</span>
             </div>
             <div className="p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <div className="text-3xl font-bold bg-black bg-clip-text text-transparent">
                 {house?.rooms}
               </div>
               <span className="text-gray-600 font-medium">Rooms</span>
@@ -221,8 +221,8 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
                   key={index}
                   className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
                 >
-                  <div className="h-8 w-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <Star className="h-4 w-4 text-orange-500" />
+                  <div className="h-8 w-8 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <Star className="h-4 w-4 text-gray-500" />
                   </div>
                   <span className="font-medium text-gray-700">{amenity}</span>
                 </div>

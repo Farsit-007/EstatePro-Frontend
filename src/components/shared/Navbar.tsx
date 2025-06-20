@@ -52,8 +52,8 @@ export default function Navbar({ user }: { user: IUser }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     setIsLoading(true);
     if (protectedRoutes.some((route) => pathname.match(route))) {
       router.push("/login");
@@ -77,16 +77,20 @@ export default function Navbar({ user }: { user: IUser }) {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 group"
+          className="flex items-center cursor-pointer gap-2 group"
           prefetch={false}
         >
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-            <div className="relative px-4 py-1 bg-white dark:bg-gray-900 ring-1 ring-gray-900/5 rounded-full leading-none flex items-center">
-              <Building className="h-5 w-5 text-purple-600" />
-              <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                EstatePro
-              </span>
+            <div
+              className="absolute -inset-1 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"
+              style={{
+                background: `radial-gradient(circle at center, #181818  0%, rgba(79, 57, 246, 0.1) 70%)`,
+              }}
+            ></div>
+
+            <div className="relative px-4 py-1 bg-black text-white rounded-full leading-none flex items-center">
+              <Building className="h-5 w-5" />
+              <span className="ml-2 font-bold">EstatePro</span>
             </div>
           </div>
         </Link>
@@ -99,7 +103,7 @@ export default function Navbar({ user }: { user: IUser }) {
               className={cn(
                 "flex items-center px-4 py-2 rounded-full transition-all",
                 pathname === link.path
-                  ? "bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 text-primary font-semibold"
+                  ? "bg-gradient-to-r from-purple-50 to-gray-300 dark:from-purple-900/30 dark:to-black text-primary font-semibold"
                   : "hover:bg-gray-100 dark:hover:bg-gray-800 text-muted-foreground hover:text-foreground"
               )}
               prefetch={false}
@@ -122,7 +126,7 @@ export default function Navbar({ user }: { user: IUser }) {
                     {user?.image ? (
                       <AvatarImage src={user?.image} />
                     ) : (
-                      <AvatarFallback className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                      <AvatarFallback className="bg-gradient-to-r from-gray-500 to-gray-900 text-white cursor-pointer">
                         {user?.name?.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     )}
@@ -166,13 +170,13 @@ export default function Navbar({ user }: { user: IUser }) {
               <Link href="/login">
                 <Button
                   variant="outline"
-                  className="rounded-full px-4 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="rounded-full cursor-pointer px-4 hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   Login
                 </Button>
               </Link>
               <Link href="/register">
-                <Button className="rounded-full px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                <Button className="rounded-full cursor-pointer px-4 bg-black text-white">
                   Register
                 </Button>
               </Link>

@@ -1,5 +1,6 @@
 "use client";
-import LoadingPage from "@/components/modules/Loading/LoadingPage";
+
+import { LoadingPage } from "@/components/modules/Loading/LoadingPage";
 import { getCurrentUser } from "@/services/AuthServices";
 import { IUser } from "@/types/user";
 import {
