@@ -17,6 +17,7 @@ export const register = async (userData: FieldValues) => {
     });
     revalidateTag("USER");
     const result = await res.json();
+    console.log(result);
     return result;
   } catch (error: any) {
     return Error(error);
@@ -133,6 +134,48 @@ export const changePassword = async (userData: FieldValues) => {
           Authorization: token,
         },
         body: JSON.stringify(userData),
+      }
+    );
+    revalidateTag("USER");
+    const result = await res.json();
+    return result;
+  } catch (error: any) {
+    return Error(error);
+  }
+};
+
+export const sendResetEmail = async (userData: FieldValues) => {
+ 
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/auth/send-reset-email`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    );
+    revalidateTag("USER");
+    const result = await res.json();
+    return result;
+  } catch (error: any) {
+    return Error(error);
+  }
+};
+
+export const changeResetPassword = async (userData: FieldValues,email:string,token : string) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/auth/reset-password`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({...userData,email}),
       }
     );
     revalidateTag("USER");

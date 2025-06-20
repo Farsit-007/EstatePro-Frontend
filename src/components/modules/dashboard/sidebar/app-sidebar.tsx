@@ -108,8 +108,8 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild></SidebarMenuButton>
-              <div className="flex items-center justify-center">
+            <SidebarMenuButton size="lg" asChild>
+               <div className="flex items-center justify-center">
                 <Link
                 href="/"
                 className="flex items-centercursor-pointer gap-2 group"
@@ -123,6 +123,8 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
                 </div>
               </Link>
               </div>
+            </SidebarMenuButton>
+             
             
           </SidebarMenuItem>
         </SidebarMenu>

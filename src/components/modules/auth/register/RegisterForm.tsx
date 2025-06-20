@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,16 +37,20 @@ const RegisterForm = () => {
         toast.success(res?.message);
         router.push("/login");
       } else {
-        toast.error(res?.message);
+        if (res.errorSource[0].message) {
+          toast.error(res.errorSource[0].message);
+        } else {
+          toast.error(res?.message);
+        }
       }
-    } catch (error) {
+    } catch (error : any) {
       setIsLoading(false);
-      console.log(error);
+    toast.error(error?.message);
     }
   };
 
   return (
-    <div className=" w-full md:w-[70%] lg:w-[60%] xl:w-[40%] border-2 rounded-xl p-5">
+    <div className=" w-full md:w-[70%] lg:w-[60%] xl:w-[40%] border-2 rounded-xl m-4 p-5">
       <div className="flex items-center mb-3 gap-2">
         <div>{/* <Logo /> */}</div>
 
@@ -214,7 +219,7 @@ const RegisterForm = () => {
             />
           </div>
 
-          <Button type="submit">
+          <Button type="submit" className="cursor-pointer">
             {" "}
             {isSubmitting ? "Registering..." : "Register"}
           </Button>

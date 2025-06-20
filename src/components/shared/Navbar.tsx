@@ -12,7 +12,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { useUser } from "@/context/UserContext";
-import { LogOut, Home, Info, Building } from "lucide-react";
+import { LogOut, Home, Info, Building, ShieldCheck, FileText } from "lucide-react";
 import { logout } from "@/services/AuthServices";
 import { usePathname, useRouter } from "next/navigation";
 import { protectedRoutes } from "@/constants";
@@ -41,6 +41,16 @@ export default function Navbar({ user }: { user: IUser }) {
       path: "/houses",
       label: "Properties",
       icon: <Building className="h-4 w-4 mr-2" />,
+    },
+     {
+      path: "/privacy",
+      label: "Privacy & Policy",
+      icon: <ShieldCheck className="h-4 w-4 mr-2" />
+    },
+     {
+      path: "/terms",
+      label: "Terms & Conditions",
+      icon: <FileText className="h-4 w-4 mr-2" />
     },
   ];
 

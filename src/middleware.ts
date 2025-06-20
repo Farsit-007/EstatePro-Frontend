@@ -3,7 +3,7 @@ import { getCurrentUser } from "./services/AuthServices";
 
 type Role = keyof typeof roleBasedPrivateRoutes;
 
-const authRoutes = ["/login", "/register"];
+const authRoutes = ["/login", "/register","/change-password"];
 
 const roleBasedPrivateRoutes = {
   tenant: [
@@ -63,6 +63,6 @@ export const config = {
     "/profile",
     "/edit-profile",
     "/change-password",
-    "/house-list/:page",
+    "/house-list/:page"
   ],
 };

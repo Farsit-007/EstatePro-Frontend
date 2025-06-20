@@ -190,7 +190,7 @@ const VerifyPayment = () => {
             </p>
             <Button 
               onClick={handlePush}
-              className="gap-2 rounded-full bg-gray-600 px-8 py-6 text-lg hover:bg-gray-700"
+              className="gap-2 rounded-full cursor-pointer bg-gray-600 px-8 py-6 text-lg hover:bg-gray-700"
             >
               <CreditCard className="h-5 w-5" />
               View Rental Request

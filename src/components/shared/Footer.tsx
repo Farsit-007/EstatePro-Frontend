@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/footer";
 import LaunchUI from "@/components/logos/launch-ui";
 import Link from "next/link";
-import { Building, Home, Info } from "lucide-react";
+import { Building, FileText, Home, Info, ShieldCheck } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -107,13 +107,25 @@ export default function FooterSection() {
                 Legal
               </h3>
               <div className="space-y-3">
-                {["Privacy Policy", "Terms of Service"].map((item) => (
+                {[
+                  {
+                    title: "Privacy Policy",
+                    url: "/privacy",
+                    icon : <ShieldCheck className="h-4 w-4 mr-2" />
+                  },
+                  {
+                    title: "Terms of Service",
+                    url: "/terms",
+                     icon : <FileText className="h-4 w-4 mr-2" />
+                  },
+                ].map((item) => (
                   <Link
-                    key={item}
-                    href="#"
-                    className="text-muted-foreground text-sm flex items-center hover:text-blue-500 transition-colors"
+                    key={item.title}
+                    href={item.url}
+                    className="text-sm flex items-center transition-colors text-gray-600 dark:text-gray-400 hover:text-black"
                   >
-                    {item}
+                    <span className="mr-2 text-black">{item.icon}</span>
+                    {item.title}
                   </Link>
                 ))}
               </div>

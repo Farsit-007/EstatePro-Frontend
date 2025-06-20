@@ -28,7 +28,7 @@ const SearchField = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           aria-label="Search house"
-          className="rounded-full p-6 outline-0 focus:outline-0 focus-within:outline-none"
+          className="rounded-full p-6 outline-0 shadow-2xl focus:outline-0 border-2 focus-within:outline-none"
         />
       </form>
 

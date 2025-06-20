@@ -48,18 +48,62 @@ const LoginForm = () => {
       console.log(error);
     }
   };
+  const demoCredentials = {
+    admin: {
+      email: "admin@gmail.com",
+      password: "admin123",
+    },
+    landlord: {
+      email: "landlord@gmail.com",
+      password: "landloard123",
+    },
+    tenant: {
+      email: "tenant@gmail.com",
+      password: "tenant123",
+    },
+  };
 
   return (
-    <div className="max-w-md w-full border-2 rounded-xl p-5">
+    <div className="max-w-md w-full border-2 rounded-xl m-4 p-5">
       <div className="flex items-center mb-3 gap-2">
-        <div>{/* <Logo /> */}</div>
-
         <div>
           <h1 className="text-lg  font-semibold">Login</h1>
           <small className="text-gray-600">
             Join us today and start your journey
           </small>
         </div>
+      </div>
+      <div className="flex items-center my-5 justify-between">
+        <Button
+          variant="default"
+          size="sm"
+          onClick={() => {
+            form.setValue("email", demoCredentials.admin.email);
+            form.setValue("password", demoCredentials.admin.password);
+          }}
+        >
+          Demo Admin
+        </Button>
+        <Button
+          variant="default"
+          size="sm"
+          onClick={() => {
+            form.setValue("email", demoCredentials.landlord.email);
+            form.setValue("password", demoCredentials.landlord.password);
+          }}
+        >
+          Demo Landlord
+        </Button>
+        <Button
+          variant="default"
+          size="sm"
+          onClick={() => {
+            form.setValue("email", demoCredentials.tenant.email);
+            form.setValue("password", demoCredentials.tenant.password);
+          }}
+        >
+          Demo Tenant
+        </Button>
       </div>
       <Form {...form}>
         <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
@@ -95,11 +139,20 @@ const LoginForm = () => {
                   />
                 </FormControl>
                 <FormMessage />
+
+                <small className="text-gray-600 flex justify-end">
+                  <Link
+                    href={"/reset-password"}
+                    className="text-primary underline"
+                  >
+                    Forget Password
+                  </Link>
+                </small>
               </FormItem>
             )}
           />
 
-          <Button className="w-full my-3" type="submit">
+          <Button className="w-full mb-3 cursor-pointer" type="submit">
             {isSubmitting ? "Logging..." : "login"}
           </Button>
           <div className="flex items-center justify-center">
@@ -109,6 +162,14 @@ const LoginForm = () => {
                 Register
               </Link>
             </small>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <Link href={"/"}>
+              <Button variant="default" className="w-full ">
+                Back To Home
+              </Button>
+            </Link>
           </div>
         </form>
       </Form>
