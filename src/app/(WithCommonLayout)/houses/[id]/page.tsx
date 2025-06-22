@@ -1,18 +1,16 @@
 import HouseDetails from "@/components/modules/house/Home/HouseDetails";
 import { getSingleHouseDetails } from "@/services/Home";
+import { Metadata } from "next";
 
-import type { Metadata } from "next";
-
-type PageParams = {
-  params: { id: string };
-};
-
-export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { id } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
   const { data } = await getSingleHouseDetails(id);
-
   return {
-    title: `${data?.title || "House"} | EstatePro`,
+    title: `${data?.name || "House"} - EstatePro`,
     description: data?.description || "View house details on EstatePro",
   };
 }
