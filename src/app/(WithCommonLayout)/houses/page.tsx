@@ -5,8 +5,12 @@ import HouseCardH from "@/components/modules/house/Home/HouseCardH";
 import Pagination from "@/components/ui/core/Pagination/Pagination";
 import { getAllListingHouse } from "@/services/Home";
 import { IHouse } from "@/types/house";
+import { Metadata } from "next";
 import { Suspense } from "react";
-
+export const metadata: Metadata = {
+  title: "All Properties - EstatePro",
+  description: "User-friendly rental platform connecting tenants and landlords. Browse properties, pay securely via ShurjoPay. Manage listings, payments, and interactions efficiently.",
+};
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const page = async ({ searchParams }: { searchParams: SearchParams }) => {

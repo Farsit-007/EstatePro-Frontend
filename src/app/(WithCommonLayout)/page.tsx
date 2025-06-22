@@ -4,7 +4,11 @@ import ReviewMarquee from "@/components/modules/home/Marque";
 import SearchField from "@/components/modules/home/SearchField";
 import InteractiveCarousel from "@/components/modules/home/slider";
 import { WhyChooseUs } from "@/components/modules/home/WhtChoose";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Home - EstatePro",
+  description: "User-friendly rental platform connecting tenants and landlords. Browse properties, pay securely via ShurjoPay. Manage listings, payments, and interactions efficiently.",
+};
 export default function Home() {
   return (
     <div>

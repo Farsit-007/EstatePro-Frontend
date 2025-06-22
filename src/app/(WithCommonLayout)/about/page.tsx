@@ -1,8 +1,12 @@
 // app/about/page.tsx
 import { BadgeCheck, HeartHandshake, LandPlot, ScrollText } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
+export const metadata: Metadata = {
+  title: "About Us - EstatePro",
+  description: "User-friendly rental platform connecting tenants and landlords. Browse properties, pay securely via ShurjoPay. Manage listings, payments, and interactions efficiently.",
+};
 export default function page() {
   return (
     <div className="min-h-screen my-10">

@@ -1,4 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - EstatePro",
+  description: "User-friendly rental platform connecting tenants and landlords. Browse properties, pay securely via ShurjoPay. Manage listings, payments, and interactions efficiently.",
+};
+
 const page = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 md:p-8">
