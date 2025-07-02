@@ -74,7 +74,7 @@ EstatePro is a user-friendly rental house finding website that connects tenants 
 
    ```bash
    NEXT_PUBLIC_API_URL="your_backend_url"
-   CLOUD_Name = ""
+   CLOUD_NAME = ""
 
    ```
 
@@ -119,14 +119,14 @@ EstatePro is a user-friendly rental house finding website that connects tenants 
 
    SMTP_EMAIL=""
    SMTP_PASSWORD=""
-   RESET_PASSWORD_LINK=https://estatepro-lac.vercel.app/change-password
+   RESET_PASSWORD_LINK="https://estatepro-lac.vercel.app/change-password"
 
    SP_ENDPOINT=""
    SP_USERNAME=""
    SP_PASSWORD=""
    SP_PREFIX=""
-  SP_RETURN_URL=""
-   SP_RETURN_URL=https://estatepro-lac.vercel.app/verify
+   SP_RETURN_URL=""
+   SP_RETURN_URL="https://estatepro-lac.vercel.app/verify"
    DB_FILE=""
 
    ```
