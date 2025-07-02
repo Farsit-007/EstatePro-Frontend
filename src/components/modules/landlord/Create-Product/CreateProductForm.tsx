@@ -197,8 +197,8 @@ const CreateProductForm = () => {
               </div>
             </div>
           </div>
-          <Button className="w-full my-5" type="submit">
-            {isSubmitting ? "Creating Shop..." : "Create Shop"}
+          <Button className="w-full my-5 cursor-pointer" type="submit">
+            {isSubmitting ? "Creating House..." : "Create House"}
           </Button>
         </form>
       </Form>

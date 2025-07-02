@@ -77,6 +77,7 @@ const LoginForm = () => {
         <Button
           variant="default"
           size="sm"
+          className="cursor-pointer"
           onClick={() => {
             form.setValue("email", demoCredentials.admin.email);
             form.setValue("password", demoCredentials.admin.password);
@@ -87,6 +88,7 @@ const LoginForm = () => {
         <Button
           variant="default"
           size="sm"
+          className="cursor-pointer"
           onClick={() => {
             form.setValue("email", demoCredentials.landlord.email);
             form.setValue("password", demoCredentials.landlord.password);
@@ -97,6 +99,7 @@ const LoginForm = () => {
         <Button
           variant="default"
           size="sm"
+          className="cursor-pointer"
           onClick={() => {
             form.setValue("email", demoCredentials.tenant.email);
             form.setValue("password", demoCredentials.tenant.password);
@@ -164,9 +167,9 @@ const LoginForm = () => {
             </small>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center ">
             <Link href={"/"}>
-              <Button variant="default" className="w-full ">
+              <Button variant="default" className="w-full cursor-pointer">
                 Back To Home
               </Button>
             </Link>

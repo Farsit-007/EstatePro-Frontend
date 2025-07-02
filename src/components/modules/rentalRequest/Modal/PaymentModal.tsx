@@ -66,7 +66,7 @@ const PaymentModal = ({ id }: { id: string }) => {
       <DialogTrigger asChild>
         <Button
           size="sm"
-          className="transition-all hover:bg-primary/90 active:scale-95 group"
+          className="transition-all hover:bg-primary/90 active:scale-95 group cursor-pointer"
           variant="secondary"
         >
           Make Payment

@@ -222,7 +222,7 @@ const HouseEditModal = ({ house }: { house: IHouse }) => {
               </div>
             </div>
           </div>
-          <Button className="w-full my-5" type="submit">
+          <Button className="w-full my-5 cursor-pointer" type="submit">
             {isSubmitting ? "Updating Shop..." : "Update Shop"}
           </Button>
         </form>

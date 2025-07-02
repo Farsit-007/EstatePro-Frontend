@@ -1,6 +1,5 @@
 "use server"
-const cloudName = "dervoi2c1";
-const api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
+const api = `https://api.cloudinary.com/v1_1/${process.env.CLOUD_NAME}/image/upload`;
 export const uploadFile = async (file: File) => {
 
   try {
@@ -12,7 +11,6 @@ export const uploadFile = async (file: File) => {
       body: formData, 
     });
     const imgUrl = await res.json();
-    console.log(imgUrl.secure_url); 
     return imgUrl.secure_url;
   } catch (error) {
     console.log("Error uploading file:", error);

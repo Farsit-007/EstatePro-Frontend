@@ -167,7 +167,7 @@ const HouseDetails = ({ house }: { house: IHouse }) => {
             <div className="mt-6 transition-transform duration-300 hover:scale-[1.02]">
               <Button
                 onClick={handleNoUser}
-                className="w-full py-7 text-xl bg-black text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+                className="w-full py-7 text-xl bg-black text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all cursor-pointer"
               >
                 Request Rental
               </Button>

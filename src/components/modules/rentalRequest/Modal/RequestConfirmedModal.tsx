@@ -56,7 +56,7 @@ const RequestConfirmedModal = ({ id }: { id: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className="transition-all hover:bg-primary/90 active:scale-95 group"
+          className="transition-all cursor-pointer hover:bg-primary/90 active:scale-95 group"
           variant="secondary"
         >
           <CheckCircle2 className="w-4 h-4 mr-2 text-green-600 group-hover:text-green-700" />

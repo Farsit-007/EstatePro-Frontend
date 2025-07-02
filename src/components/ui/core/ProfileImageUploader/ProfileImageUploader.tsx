@@ -79,7 +79,7 @@ const ProfileImageUploader = ({
         <Button
           type="button"
           onClick={handleRemove}
-          className="absolute -top-2 -right-2 p-1 w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white shadow-md"
+          className="absolute -top-2 -right-2 p-1 w-8 h-8 rounded-full cursor-pointer bg-red-500 hover:bg-red-600 text-white shadow-md"
         >
           <X className="w-4 h-4" />
         </Button>

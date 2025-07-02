@@ -31,7 +31,7 @@ export const UserProfile = ({ user }: { user: IUser }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost" size="sm">
+        <Button className="cursor-pointer" variant="ghost" size="sm">
           <Settings className="h-4 w-4" />
         </Button>
       </DialogTrigger>
@@ -72,7 +72,7 @@ export const UserProfile = ({ user }: { user: IUser }) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="w-full justify-between font-normal"
+                  className="w-full justify-between cursor-pointer font-normal"
                 >
                   {selectedRole.charAt(0).toUpperCase() + selectedRole.slice(1)}
                   <svg
@@ -109,7 +109,8 @@ export const UserProfile = ({ user }: { user: IUser }) => {
             onClick={() => {
               handleUpdateStatus();
             }}
-            className="rounded-full bg-blue-600 hover:bg-blue-700"
+            variant="default"
+            className=""
           >
             Save Changes
           </Button>

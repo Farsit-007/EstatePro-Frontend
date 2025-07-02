@@ -64,7 +64,7 @@ const HouseCard = ({ house, role, path }: { house: IHouse; role?: string; path?:
         <Link href={`/houses/${house._id}`} className="flex-1">
           <Button
             variant="default"
-            className="w-full transform transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            className="w-full transform transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
           >
             View Details
           </Button>
@@ -76,7 +76,7 @@ const HouseCard = ({ house, role, path }: { house: IHouse; role?: string; path?:
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-xl transition-transform hover:scale-105"
+                className="rounded-xl cursor-pointer transition-transform hover:scale-105"
               >
                 <Edit2 className="h-4 w-4" />
               </Button>

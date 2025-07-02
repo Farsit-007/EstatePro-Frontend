@@ -65,7 +65,7 @@ const HouseReqModal = ({ id }: { id: string }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="w-full py-6 text-lg bg-primary hover:bg-primary/90">
+        <Button className="w-full py-6 text-lg bg-primary hover:bg-primary/90 cursor-pointer">
           Request Rental
         </Button>
       </DialogTrigger>

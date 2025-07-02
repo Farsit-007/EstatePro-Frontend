@@ -121,7 +121,7 @@ const ChangePassword = () => {
           <div className="flex justify-end">
             <Button
               disabled={newPassword !== confirmPassword }
-              className=""
+              className="cursor-pointer"
               type="submit"
             >
               {isSubmitting ? "Savings..." : "Save"}

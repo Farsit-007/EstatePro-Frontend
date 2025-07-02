@@ -31,7 +31,7 @@ const HouseDeleteModal = ({ id }: { id: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className=" transition-all hover:bg-primary/90 active:scale-95"
+          className=" transition-all cursor-pointer hover:bg-primary/90 active:scale-95"
           variant="secondary"
         >
           <Delete/>
@@ -74,7 +74,7 @@ const HouseDeleteModal = ({ id }: { id: string }) => {
               <DialogClose asChild>
                 <Button
                   variant="outline"
-                  className="hover:bg-gray-100 transition-colors border-gray-300"
+                  className="hover:bg-gray-100 transition-colors border-gray-300 cursor-pointer"
                 >
                   No
                 </Button>

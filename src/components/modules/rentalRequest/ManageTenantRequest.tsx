@@ -84,6 +84,7 @@ const ManageTenantRequest = ({ request }: TRequestProps) => {
             <div className="flex justify-center items-center gap-10">
               <Button
                 size="sm"
+                className="cursor-pointer"
                 disabled={row.original.status === "pending"}
                 title="Please wait for the Landlord Response"
               >

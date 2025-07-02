@@ -38,7 +38,7 @@ const Pagination = ({
         disabled={currentPage === 1}
         variant="outline"
         size="sm"
-        className="w-10 h-10 rounded-full flex items-center justify-center border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+        className="w-10 h-10 rounded-full  flex items-center justify-center border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
       >
         <ArrowLeft className="w-5 h-5 cursor-pointer text-gray-600" />
       </Button>

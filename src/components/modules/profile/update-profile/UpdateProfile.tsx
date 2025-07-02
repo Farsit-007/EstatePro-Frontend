@@ -164,7 +164,7 @@ const UpdateProfile = ({
           </div>
 
           <div className="flex justify-end">
-            <Button type="submit">
+            <Button type="submit" className="cursor-pointer">
               {" "}
               {isSubmitting ? "Updating..." : "Update"}
             </Button>

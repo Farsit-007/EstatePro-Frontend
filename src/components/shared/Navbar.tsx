@@ -12,7 +12,14 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { useUser } from "@/context/UserContext";
-import { LogOut, Home, Info, Building, ShieldCheck, FileText } from "lucide-react";
+import {
+  LogOut,
+  Home,
+  Info,
+  Building,
+  ShieldCheck,
+  FileText,
+} from "lucide-react";
 import { logout } from "@/services/AuthServices";
 import { usePathname, useRouter } from "next/navigation";
 import { protectedRoutes } from "@/constants";
@@ -42,15 +49,15 @@ export default function Navbar({ user }: { user: IUser }) {
       label: "Properties",
       icon: <Building className="h-4 w-4 mr-2" />,
     },
-     {
+    {
       path: "/privacy",
       label: "Privacy & Policy",
-      icon: <ShieldCheck className="h-4 w-4 mr-2" />
+      icon: <ShieldCheck className="h-4 w-4 mr-2" />,
     },
-     {
+    {
       path: "/terms",
       label: "Terms & Conditions",
-      icon: <FileText className="h-4 w-4 mr-2" />
+      icon: <FileText className="h-4 w-4 mr-2" />,
     },
   ];
 
@@ -130,7 +137,7 @@ export default function Navbar({ user }: { user: IUser }) {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="relative h-8 w-8 rounded-full"
+                  className="relative h-8 w-8 rounded-full cursor-pointer"
                 >
                   <Avatar className="h-8 w-8">
                     {user?.image ? (
@@ -218,7 +225,7 @@ export default function Navbar({ user }: { user: IUser }) {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="lg:hidden">
-              <div className="flex flex-col gap-6 pt-6">
+              <div className="flex flex-col gap-6 mt-8">
                 {links.map((link, idx) => (
                   <Link
                     href={link.path}
@@ -237,17 +244,18 @@ export default function Navbar({ user }: { user: IUser }) {
                 ))}
                 {!contextUser && (
                   <div className="md:hidden">
-                    <Link
-                      href="/login"
-                      className="flex items-center justify-center px-4 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 border"
-                    >
-                      Login
+                    <Link href="/login">
+                      <Button
+                        variant="outline"
+                        className="rounded-full cursor-pointer px-4 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      >
+                        Login
+                      </Button>
                     </Link>
-                    <Link
-                      href="/register"
-                      className="flex items-center justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-                    >
-                      Register
+                    <Link href="/register">
+                      <Button className="rounded-full cursor-pointer px-4 bg-black text-white">
+                        Register
+                      </Button>
                     </Link>
                   </div>
                 )}

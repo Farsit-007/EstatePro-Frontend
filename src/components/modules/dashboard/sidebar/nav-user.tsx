@@ -44,7 +44,7 @@ export function NavUser({ user }: { user: IUser }) {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer"
             >
               <Avatar className="h-8 w-8">
                 <AvatarFallback className="bg-gradient-to-r from-gray-500 to-gray-900 text-white cursor-pointer">
@@ -78,7 +78,7 @@ export function NavUser({ user }: { user: IUser }) {
               </div>
             </DropdownMenuLabel>
 
-            <DropdownMenuItem onClick={handleLogout}>
+            <DropdownMenuItem className="cursor-pointer"  onClick={handleLogout}>
               <LogOut />
               Log out
             </DropdownMenuItem>

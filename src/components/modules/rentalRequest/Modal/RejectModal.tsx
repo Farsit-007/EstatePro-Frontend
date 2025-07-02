@@ -32,7 +32,7 @@ const RejectModal = ({ id }: { id: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className=" transition-all hover:bg-primary/90 active:scale-95"
+          className=" transition-all hover:bg-primary/90 active:scale-95 cursor-pointer"
           variant="secondary"
         >
          <XCircle size={30} className="h-10 w-10 text-red-500" />
@@ -64,7 +64,7 @@ const RejectModal = ({ id }: { id: string }) => {
               <DialogClose asChild>
                 <Button
                   variant="outline"
-                  className="hover:bg-gray-100 transition-colors border-gray-300"
+                  className="hover:bg-gray-100 transition-colors border-gray-300 cursor-pointer"
                 >
                   No
                 </Button>
@@ -72,7 +72,7 @@ const RejectModal = ({ id }: { id: string }) => {
               <Button
                 variant="destructive"
                 onClick={handleStatus}
-                className="flex items-center gap-2 hover:bg-red-700 transition-colors transform hover:scale-105"
+                className="flex items-center cursor-pointer gap-2 hover:bg-red-700 transition-colors transform hover:scale-105"
               >
                 <svg
                   className="w-4 h-4"

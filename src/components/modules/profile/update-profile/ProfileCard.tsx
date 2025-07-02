@@ -22,6 +22,7 @@ const ProfileCard = ({
         <div className="flex items-center border-b-2 border-dashed pb-2 justify-between ">
           <h1 className="text-lg font-semibold">My Profile</h1>
           <Button
+          className="cursor-pointer"
             onClick={() => setIsEditing((prev) => !prev)}
             variant={ "default"}
           >

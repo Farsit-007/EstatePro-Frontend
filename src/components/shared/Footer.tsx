@@ -10,10 +10,21 @@ import Link from "next/link";
 import { Building, FileText, Home, Info, ShieldCheck } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "sonner";
 
 export default function FooterSection() {
   const pathname = usePathname();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email.trim()) {
+      toast.error("Please enter a valid email");
+      return;
+    }
+    toast.success("Subscribed successfully!");
+    setEmail("");
+  };
   const links = [
     {
       path: "/",
@@ -111,12 +122,12 @@ export default function FooterSection() {
                   {
                     title: "Privacy Policy",
                     url: "/privacy",
-                    icon : <ShieldCheck className="h-4 w-4 mr-2" />
+                    icon: <ShieldCheck className="h-4 w-4 mr-2" />,
                   },
                   {
                     title: "Terms of Service",
                     url: "/terms",
-                     icon : <FileText className="h-4 w-4 mr-2" />
+                    icon: <FileText className="h-4 w-4 mr-2" />,
                   },
                 ].map((item) => (
                   <Link
@@ -136,10 +147,15 @@ export default function FooterSection() {
               <div className="space-y-4">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="w-full px-4 py-2 rounded-lg border bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
-                <button className="w-full bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+                <button
+                  onClick={handleSubscribe}
+                  className="w-full cursor-pointer bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                >
                   Subscribe
                 </button>
               </div>

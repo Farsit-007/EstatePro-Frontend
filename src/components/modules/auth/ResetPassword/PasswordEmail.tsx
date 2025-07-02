@@ -78,7 +78,7 @@ const PasswordEmail = () => {
                 )}
               />
 
-              <Button className="w-full mb-3" type="submit" disabled={isSubmitting}>
+              <Button className="w-full mb-3 cursor-pointer" type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Sending Email..." : "Send Reset Link"}
               </Button>
 
@@ -100,7 +100,7 @@ const PasswordEmail = () => {
           <p className="text-gray-600">
             We&rsquo;ve sent a password reset link to your email. Please check your inbox and follow the instructions.
           </p>
-          <Button onClick={() => router.push("/login")} className="w-full">
+          <Button onClick={() => router.push("/login")} className="w-full cursor-pointer">
             Back to Login
           </Button>
         </div>
