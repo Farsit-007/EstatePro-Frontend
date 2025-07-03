@@ -63,8 +63,6 @@ export const meta = async () => {
   }
 };
 
-
-
 export const updateUserStatus = async (id : string,value : {isBlock?: boolean}) => {
    
   const token = await getValidToken();
